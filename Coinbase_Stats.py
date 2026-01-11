@@ -3,12 +3,12 @@ import pandas as pd
 from src.etl import get_file_path, load_transactions, clean_currency_columns, convert_dates
 
 st.set_page_config(
-    page_title="💰 Coinbase Stats",
-    page_icon="💰",
+    page_title=" Coinbase Stats",
+    page_icon="",
     layout="wide"
 )
 
-st.title("💰 Coinbase Stats Dashboard")
+st.title("Coinbase Stats Dashboard")
 
 # Choose data source
 st.subheader("Data Source")
@@ -40,10 +40,10 @@ if df is not None:
     st.success("Data loaded successfully!")
     st.dataframe(df.head())
 
-    # 🔽 Export button
+    #  Export button
     csv = df.to_csv(index=False).encode("utf-8")
     st.download_button(
-        label="⬇️ Download Clean Dataset as CSV",
+        label=" Download Clean Dataset as CSV",
         data=csv,
         file_name="coinbase_clean.csv",
         mime="text/csv",
